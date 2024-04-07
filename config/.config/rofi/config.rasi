@@ -1,0 +1,11 @@
+@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
+window {
+  location: north west;
+  width: 100%;
+  border: 0;
+  padding: 0;
+}
+
+listview {
+  lines: 6;
+}

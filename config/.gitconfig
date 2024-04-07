@@ -1,0 +1,26 @@
+[include]
+path = ~/.gituser
+
+[alias]
+lg  = log --graph --all --format=format:'%C(bold magenta)%h%C(reset) %C(bold green)%an%C(reset) %C(bold cyan)%ai%C(reset) %C(bold yellow)(%ar)%C(reset)%C(bold red)%d%C(reset)%n%C(white)%s%C(reset)' -n 10
+lg1  = log --graph --format=format:'%C(bold magenta)%h%C(reset) %C(bold green)%an%C(reset) %C(bold cyan)%ai%C(reset) %C(bold yellow)(%ar)%C(reset)%C(bold red)%d%C(reset)%n%C(white)%s%C(reset)' -n 10
+lg2 = log --graph --all --format=format:'%C(bold magenta)%h%C(reset) %C(bold green)%an%C(reset) %C(bold cyan)%ai%C(reset) %C(bold yellow)(%ar)%C(reset)%C(bold red)%d%C(reset)%n%C(white)%B%C(reset)' -n 10
+dif = diff --color
+s = status
+fetchall = fetch -p --recurse-submodules
+subup = submodule update --init --recursive
+
+[core]
+hooksPath = ~/.githooks
+editor = nvim
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+
+#[credential]
+#	helper = !/etc/alternatives/java -Ddebug=false -Djava.net.useSystemProxies=true -jar /usr/local/bin/git-credential-manager.jar
+[safe]
+	directory = /opt/flutter
