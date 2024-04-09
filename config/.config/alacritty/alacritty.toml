@@ -3,3 +3,31 @@ size = 9.0
 
 [scrolling]
 history = 10000
+
+[font.normal]
+family = "JetBrainsMonoNerdFont"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Insert"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Insert"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "NumpadMultiply"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "NumpadAdd"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "NumpadSubtract"
+mods = "Control"
