@@ -26,3 +26,5 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+vim.opt.listchars = { trail = '·' }
+vim.opt.list = true
