@@ -26,7 +26,10 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.listchars = { trail = '·' }
+vim.opt.listchars = {
+  tab = '▸ ',
+  trail = '·',
+}
 vim.opt.list = true
 
 vim.opt_local.foldmethod = "indent"
