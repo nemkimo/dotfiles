@@ -28,3 +28,7 @@ vim.opt.updatetime = 50
 
 vim.opt.listchars = { trail = '·' }
 vim.opt.list = true
+
+vim.opt_local.foldmethod = "indent"
+vim.opt.foldenable = false
+vim.opt.foldlevel = 99
