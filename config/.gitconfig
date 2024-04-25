@@ -10,6 +10,9 @@ s = status
 fetchall = fetch -p --recurse-submodules
 subup = submodule update --init --recursive
 
+[init]
+	defaultBranch = main
+
 [core]
 hooksPath = ~/.githooks
 editor = nvim
