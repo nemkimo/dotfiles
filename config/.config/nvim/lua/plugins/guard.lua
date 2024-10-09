@@ -10,7 +10,7 @@ return {
     ft('py'):fmt('lsp')
     ft('lua'):fmt('lsp')
 
-    require('guard').setup {
+    vim.g.guard_config = {
       -- the only options for the setup function
       fmt_on_save = true,
       -- Use lsp if no formatter was defined for this filetype
