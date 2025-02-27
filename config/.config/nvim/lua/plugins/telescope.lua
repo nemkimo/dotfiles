@@ -20,6 +20,7 @@ return {
       vim.keymap.set('n', '<leader>fh', builtin.oldfiles, { desc = 'Find recent files' })
       vim.keymap.set('n', '<leader>fs', builtin.search_history, { desc = 'Find recent searches' })
       vim.keymap.set('n', '<leader>fr', builtin.lsp_references, { desc = 'Find references' })
+      vim.keymap.set('n', '<leader>fd', builtin.lsp_document_symbols, { desc = 'Find symbols in document' })
       vim.keymap.set('n', '<leader>fp', builtin.pickers, { desc = 'Find pickers' })
     end,
   },
