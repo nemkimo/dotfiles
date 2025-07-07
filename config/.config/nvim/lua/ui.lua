@@ -6,12 +6,6 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
-vim.api.nvim_create_autocmd('Filetype', {
-  group = vim.api.nvim_create_augroup('setIndent', {}),
-  pattern = { 'python' },
-  command = 'setlocal shiftwidth=4 tabstop=4 softtabstop=4'
-})
-
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
