@@ -7,6 +7,7 @@ lg1  = log --graph --format=format:'%C(bold magenta)%h%C(reset) %C(bold green)%a
 lg2 = log --graph --all --format=format:'%C(bold magenta)%h%C(reset) %C(bold green)%an%C(reset) %C(bold cyan)%ai%C(reset) %C(bold yellow)(%ar)%C(reset)%C(bold red)%d%C(reset)%n%C(white)%B%C(reset)' -n 10
 dif = diff --color
 s = status
+co = checkout
 fetchall = fetch -p --recurse-submodules
 subup = submodule update --init --recursive
 
