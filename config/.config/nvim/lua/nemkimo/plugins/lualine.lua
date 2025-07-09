@@ -1,10 +1,10 @@
 return {
-  'nvim-lualine/lualine.nvim',
+  "nvim-lualine/lualine.nvim",
   config = function()
-    require('lualine').setup {
+    require("lualine").setup({
       options = {
         icons_enabled = false,
       },
-    }
-  end
+    })
+  end,
 }

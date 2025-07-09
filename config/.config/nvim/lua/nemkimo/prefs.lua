@@ -1,3 +1,10 @@
+vim.lsp.enable({ "clangd", "luals", "python" })
+
+vim.diagnostic.config({
+  virtual_text = true,
+  -- virtual_lines = { current_line = true },
+})
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -27,8 +34,8 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.listchars = {
-  tab = '▸ ',
-  trail = '·',
+  tab = "▸ ",
+  trail = "·",
 }
 vim.opt.list = true
 
