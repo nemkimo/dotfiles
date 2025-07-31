@@ -1,4 +1,4 @@
-vim.lsp.enable({ "clangd", "luals", "python" })
+vim.lsp.enable({ "cpp", "lua", "python", "rust", "svelte", "typescript" })
 
 vim.diagnostic.config({
   virtual_text = true,
