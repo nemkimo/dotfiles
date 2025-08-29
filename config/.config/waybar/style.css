@@ -98,6 +98,7 @@ button:hover {
 }
 
 #battery.charging, #battery.plugged {
+    color: @normal-text;
     box-shadow: inset 0 -2px @normal-line;
 }
 
