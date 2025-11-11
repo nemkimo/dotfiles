@@ -50,14 +50,14 @@ button:hover {
     box-shadow: inset 0 -2px @highlight;
 }
 
+#workspaces button.focused {
+    color: @highlight;
+    box-shadow: inset 0 -2px @highlight;
+}
+
 #workspaces button.urgent {
     color: @warning;
     box-shadow: inset 0 -2px @warning;
-}
-
-#mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -2px #ffffff;
 }
 
 #clock,

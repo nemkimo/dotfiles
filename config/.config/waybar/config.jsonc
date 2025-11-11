@@ -7,10 +7,13 @@
     "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
+        "sway/workspaces",
+        "sway/mode",
         "hyprland/workspaces",
-        "hyprland/submap",
+        "hyprland/submap"
     ],
     "modules-center": [
+        "sway/window",
         "hyprland/window"
     ],
     "modules-right": [
@@ -26,8 +29,12 @@
     ],
     "hyprland/submap": {
         "format": "{}",
-        "max-length": 35,
+        "max-length": 40,
         "tooltip": false
+    },
+    "sway/mode": {
+        "format": "{}",
+        "max-length": 40,
     },
     "tray": {
         // "icon-size": 21,
