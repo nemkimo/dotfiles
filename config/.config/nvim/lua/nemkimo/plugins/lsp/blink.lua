@@ -15,6 +15,9 @@ return {
     completion = { documentation = { auto_show = false } },
     sources = {
       default = { "lsp", "path", "snippets", "buffer" },
+      per_filetype = {
+        codecompanion = { "codecompanion" },
+      },
     },
     fuzzy = { implementation = "prefer_rust_with_warning" },
   },
