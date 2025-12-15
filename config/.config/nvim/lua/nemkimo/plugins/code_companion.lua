@@ -5,7 +5,7 @@ return {
     "nvim-lua/plenary.nvim",
   },
   opts = {
-    strategies = {
+    interactions = {
       chat = {
         adapter = {
           name = "copilot",
