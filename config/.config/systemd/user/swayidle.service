@@ -1,0 +1,11 @@
+[Unit]
+Description=Idle time management daemon for sway
+Documentation=https://github.com/swaywm/swayidle
+BindsTo=sway-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/swayidle -w -C %h/.config/sway/swayidle.conf
+
+[Install]
+WantedBy=sway-session.target
