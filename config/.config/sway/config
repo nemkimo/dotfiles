@@ -208,6 +208,10 @@ bindsym $mod+r mode "resize"
 # bar {
 #     swaybar_command waybar
 # }
+# To start waybar:
+# systemctl --user disable waybar
+# sudo systemctl --global disable waybar
+# systemctl --user enable waybar-sway
 
 include /etc/sway/config.d/*
 exec_always systemctl --user start sway-session.target
