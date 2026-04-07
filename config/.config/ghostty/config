@@ -1,0 +1,10 @@
+# Ghostty can reload the configuration while running by using the menu
+# options or the bound key (default: Command + Shift + comma on macOS and
+# Control + Shift + comma on other platforms). Not all config options can be
+# reloaded while running; some only apply to new windows and others may require
+# a full restart to take effect.
+
+font-size = 10
+font-family = "JetBrainsMono Nerd Font"
+bell-features = no-title
+keybind = ctrl+enter=unbind
