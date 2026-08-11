@@ -5,34 +5,38 @@
     "*": "ask",
     "bash": {
       "*": "ask",
+      "cat *": "allow",
+      "echo *": "allow",
+      "find *": "allow",
       "git *": "allow",
       "git commit *": "deny",
       "git push *": "deny",
-      "ls *": "allow",
-      "find *": "allow",
-      "cat *": "allow",
-      "head *": "allow",
-      "tail *": "allow",
       "grep *": "allow",
-      "sort *": "allow"
+      "head *": "allow",
+      "ls *": "allow",
+      "sort *": "allow",
+      "tail *": "allow",
     },
     "edit": "deny",
     "glob": "allow",
     "grep": "allow",
     "question": "allow",
     "read": "allow",
+    "task": "allow",
     "todowrite": "allow",
-    "skill": "allow"
+    "skill": "allow",
+    "webfetch": "ask",
+    "websearch": "ask",
   },
   "agent": {
     "plan": {
-      "temperature": 0.1
+      "temperature": 0.1,
     },
     "build": {
       "temperature": 0.3,
       "permission": {
-        "edit": "ask"
-      }
-    }
-  }
+        "edit": "ask",
+      },
+    },
+  },
 }
