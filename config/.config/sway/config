@@ -218,5 +218,7 @@ bindsym $mod+r mode "resize"
 # sudo systemctl --global disable waybar
 # systemctl --user enable waybar-sway
 
+seat * xcursor_theme Adwaita 24
+
 include /etc/sway/config.d/*
 exec_always systemctl --user start sway-session.target
