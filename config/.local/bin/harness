@@ -1,0 +1,53 @@
+#!/bin/bash
+#
+# Run an AI harness in a bubblewrap sandbox.
+# Usage: [HARNESS=opencode|copilot|pi] harness [args]
+
+set -e
+
+HARNESS="${HARNESS:-opencode}"
+HARNESS_BIN="$(command -v "${HARNESS}")"
+HARNESS_BIN_DIR="$(dirname "${HARNESS_BIN}")"
+WORKSPACE="/work/$(basename "${PWD}")"
+NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
+
+case "${HARNESS}" in
+opencode) CONFIG_PATHS=(.config/opencode .local/share/opencode .local/state/opencode .cache/opencode) ;;
+copilot) CONFIG_PATHS=(.copilot) ;;
+pi) CONFIG_PATHS=(.pi) ;;
+*)
+  echo "error: unknown harness: ${HARNESS}" >&2
+  exit 1
+  ;;
+esac
+
+CONFIG_BINDS=()
+for path in "${CONFIG_PATHS[@]}"; do
+  mkdir -p "${HOME}/${path}"
+  CONFIG_BINDS+=(--bind "${HOME}/${path}" "${HOME}/${path}")
+done
+
+exec bwrap \
+  --unshare-all \
+  --share-net \
+  --die-with-parent \
+  --proc /proc \
+  --dev /dev \
+  --tmpfs /tmp \
+  --ro-bind /usr /usr \
+  --symlink usr/lib /lib \
+  --symlink usr/lib64 /lib64 \
+  --symlink usr/bin /bin \
+  --symlink usr/sbin /sbin \
+  --ro-bind /etc /etc \
+  --ro-bind-try /run/systemd/resolve /run/systemd/resolve \
+  --ro-bind "${HARNESS_BIN_DIR}" "${HARNESS_BIN_DIR}" \
+  "${CONFIG_BINDS[@]}" \
+  --ro-bind-try "$NVM_DIR" "$NVM_DIR" \
+  --ro-bind-try "$HOME/.gitconfig" "$HOME/.gitconfig" \
+  --setenv HOME "${HOME}" \
+  --setenv PATH "${PATH}" \
+  --setenv TMPDIR /tmp \
+  --bind "${PWD}" "${WORKSPACE}" \
+  --chdir "${WORKSPACE}" \
+  -- "${HARNESS_BIN}" "$@"
