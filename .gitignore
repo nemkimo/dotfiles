@@ -1,1 +1,7 @@
 config/.config/nvim/lazy-lock.json
+config/.pi/agent/auth.json
+config/.pi/agent/settings.json
+config/.pi/agent/models-store.json
+config/.pi/agent/bin
+config/.pi/agent/install
+config/.pi/agent/sessions
