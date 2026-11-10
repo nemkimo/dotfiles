@@ -41,6 +41,7 @@ exec bwrap \
   --symlink usr/sbin /sbin \
   --ro-bind /etc /etc \
   --ro-bind-try /run/systemd/resolve /run/systemd/resolve \
+  --ro-bind-try $HOME/dotfiles $HOME/dotfiles \
   --ro-bind "${HARNESS_BIN_DIR}" "${HARNESS_BIN_DIR}" \
   "${CONFIG_BINDS[@]}" \
   --ro-bind-try "$NVM_DIR" "$NVM_DIR" \
