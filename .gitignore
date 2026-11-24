@@ -5,3 +5,4 @@ config/.pi/agent/models-store.json
 config/.pi/agent/bin
 config/.pi/agent/install
 config/.pi/agent/sessions
+config/.local/bin/pi
