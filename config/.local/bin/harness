@@ -7,7 +7,6 @@ set -e
 
 HARNESS="${HARNESS:-opencode}"
 HARNESS_BIN="$(command -v "${HARNESS}")"
-HARNESS_BIN_DIR="$(dirname "${HARNESS_BIN}")"
 WORKSPACE="/work/$(basename "${PWD}")"
 NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
 
@@ -42,7 +41,7 @@ exec bwrap \
   --ro-bind /etc /etc \
   --ro-bind-try /run/systemd/resolve /run/systemd/resolve \
   --ro-bind-try $HOME/dotfiles $HOME/dotfiles \
-  --ro-bind "${HARNESS_BIN_DIR}" "${HARNESS_BIN_DIR}" \
+  --ro-bind-try $HOME/.local/bin/ $HOME/.local/bin \
   "${CONFIG_BINDS[@]}" \
   --ro-bind-try "$NVM_DIR" "$NVM_DIR" \
   --ro-bind-try "$HOME/.gitconfig" "$HOME/.gitconfig" \
